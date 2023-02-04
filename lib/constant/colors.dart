@@ -8,4 +8,4 @@ Color onBackgroundColor(BuildContext context){
 Color backgroundColor(BuildContext context){
   return Theme.of(context).colorScheme.background;
  }
-const primaryColor = Color(0xff24966d);
+const primaryColor = Color.fromARGB(255, 8, 77, 9);
