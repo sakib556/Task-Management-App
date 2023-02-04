@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:task_management_app/constant/colors.dart';
 import 'package:task_management_app/views/custom_widgets/gradient_container.dart';
+import 'package:task_management_app/views/tab/home/all_tasks.dart';
+import 'package:task_management_app/views/tab/home/reminder_task.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Column(
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height / 1.7,
@@ -36,43 +37,16 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
-                  bottom: 0,
-                  left: 16,
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Theme.of(context).scaffoldBackgroundColor,
-                            width: 3),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        clipBehavior: Clip.hardEdge,
-                        child: Container(
-                            color: Theme.of(context)
-                                .colorScheme
-                                .onSurface
-                                .withOpacity(0.40),
-                            child: const Padding(
-                              padding: EdgeInsets.all(12),
-                              child: Icon(
-                                Icons.person,
-                                size: 60,
-                              ),
-                            )),
-                      ),
-                    ),
-                  ),
-                ),
+                const Positioned(bottom: 0, child: ReminderTask()),
               ],
             ),
           ),
-          const Text("Down Body"),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: AllTasks(),
+          ),
         ],
-      ),
+    
     );
   }
 }
@@ -125,7 +99,7 @@ class WelcomeMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 180,
       child: Card(
           elevation: 100,
           color: Colors.white.withOpacity(0.1),

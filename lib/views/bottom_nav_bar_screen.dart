@@ -17,7 +17,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   int _selectedIndex = 0;
 
   final List<BottomNavigationBarItem> _navBarItems = [
-     const BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       icon: Icon(Icons.home),
       label: 'Home',
     ),
@@ -35,7 +35,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.settings),
-      label:'Settings',
+      label: 'Settings',
     ),
   ];
   final List<Widget> _screens = [
@@ -54,32 +54,33 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  _screens[_selectedIndex],
+      
+      backgroundColor: backgroundColor,
+      extendBody: true,
+      body: _screens[_selectedIndex],
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
+          color: Colors.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(60.0),
-            topRight: Radius.circular(60.0),
+            topLeft: Radius.circular(18.0), // adjust to your liking
+            topRight: Radius.circular(18.0), // adjust to your liking
+            bottomLeft: Radius.circular(8.0), // adjust to your liking
+            bottomRight: Radius.circular(8.0), // adjust to your liking
           ),
-          boxShadow: [
-      BoxShadow(
-        color: Colors.black12,
-        spreadRadius: 1,
-        blurRadius: 5,
-        offset: Offset(0, 3),
-      ),
-    ],
+          //    color: Co, // put the color here
         ),
-        
-        child: BottomNavigationBar(
-          items: _navBarItems,
-          currentIndex: _selectedIndex,
-          selectedItemColor: primaryColor,
-          unselectedItemColor: Colors.grey,
-          onTap: _onItemTapped,
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(topLeft: Radius.circular(12.0),topRight: Radius.circular(12.0)),
+          child: BottomNavigationBar(
+            items: _navBarItems,
+            currentIndex: _selectedIndex,
+            selectedItemColor: primaryColor,
+            showUnselectedLabels:true,
+            unselectedItemColor: const Color(0xffB4C1C0),
+            onTap: _onItemTapped,
+          ),
         ),
       ),
     );
   }
 }
-
