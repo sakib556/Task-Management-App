@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:task_management_app/constant/colors.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return  Column(
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height / 1.7,
@@ -16,20 +16,18 @@ class HomePage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 1.7 - 40,
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 8, 77, 9),
+                      color: primaryColor,
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(20),
                         bottomRight: Radius.circular(20),
                       )),
                   child: SafeArea(
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(15.0),
                       child: Align(
                           alignment: Alignment.topCenter,
                           child: Column(
-                            children: const [
-                              Title(),
-                            ],
+                            children: const [Title(), WelcomeMessage()],
                           )),
                     ),
                   ),
@@ -70,7 +68,6 @@ class HomePage extends StatelessWidget {
           ),
           const Text("Down Body"),
         ],
-      ),
     );
   }
 }
@@ -96,10 +93,8 @@ class Title extends StatelessWidget {
           ],
         ),
         Container(
-
           decoration: BoxDecoration(
-            border: Border.all(
-                color: primaryColor, width: 3),
+            border: Border.all(color: primaryColor, width: 3),
             borderRadius: BorderRadius.circular(50),
           ),
           child: ClipRRect(
@@ -118,3 +113,40 @@ class Title extends StatelessWidget {
     );
   }
 }
+
+class WelcomeMessage extends StatelessWidget {
+  const WelcomeMessage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 200,
+      child: Card(
+          elevation: 100,
+          color: Colors.white.withOpacity(0.1),
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    const Text("Welcome to TickTick Task"),
+                    const Text(
+                        "Your one-stop app for task management. Simplify, track, and accomplish tasks with ease."),
+                    ElevatedButton(
+                        onPressed: () {}, child: const Text("Watch Video"))
+                  ],
+                ),
+              ),
+              Positioned(
+                  bottom: -15,
+                  right: -15,
+                  child: SvgPicture.asset("assets/logo/todo_logo.svg"))
+            ],
+          )),
+    );
+  }
+}
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management_app/views/home_page.dart';
+import 'package:task_management_app/views/bottom_nav_bar_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -7,7 +7,7 @@ void main() {
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,9 +15,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const HomePage(
-        
-      ),
+      home: const BottomNavBarScreen(),
     );
   }
 }
