@@ -12,8 +12,9 @@ class GrandientContainer extends StatelessWidget {
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        Color(0xff042e2b),
         Color(0xff2c8877),
+        Color(0xff042e2b),
+
       ],
     ),
   ),

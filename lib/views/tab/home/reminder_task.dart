@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_app/views/custom_widgets/reminder_card.dart';
+import 'package:task_management_app/views/tab/home/home_screen.dart';
 
 class ReminderTask extends StatelessWidget {
   const ReminderTask({super.key});
@@ -6,46 +8,55 @@ class ReminderTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
       children: [
-        const Text("sf"),
-        Container(
-          height: 70.0,
+        Padding(
+          padding: const EdgeInsets.only(left: 8, right: 8,bottom: 5),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text("Reminder Task",style: TextStyle(color: whiteColor,fontSize: 14),),
+              Text("See All",style: TextStyle(color: greyColor,fontSize: 12),),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 91,
           width: MediaQuery.of(context).size.width,
-          color: Colors.brown,
+          // color: Colors.brown,
           child: ListView(
-            physics: const AlwaysScrollableScrollPhysics(), 
+            shrinkWrap: true,
+            physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.only(left: 10, right: 5),
             children: _widgetList,
           ),
         ),
       ],
     );
   }
-
 }
-List<Widget> _widgetList=[Container(
-                width: 160.0,
-                color: Colors.red,
-              ),
-              const SizedBox(width: 10,),
-              Container(
-                width: 160.0,
-                color: Colors.blue,
-              ),
-              const SizedBox(width: 10),
-              Container(
-                width: 160.0,
-                color: Colors.green,
-              ),
-              const SizedBox(width: 10,),
-              Container(
-                width: 160.0,
-                color: Colors.yellow,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.orange,
-              ),];
+
+List<Widget> _widgetList = [
+  ReminderCard(
+      onTap: () {},
+      logo: "reminder_yellow",
+      title: "Online Class Routine",
+      date: "10/12/2022"),
+  // const SizedBox(
+  //   width: 10,
+  // ),
+  ReminderCard(
+      onTap: () {},
+      logo: "reminder_green",
+      title: "Office Work List",
+      date: "15/12/2022"),
+  // const SizedBox(
+  //   width: 10,
+  // ),
+  ReminderCard(
+      onTap: () {},
+      logo: "reminder_blue",
+      title: "Day Task",
+      date: "10/12/2022"),
+];

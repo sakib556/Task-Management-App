@@ -13,11 +13,12 @@ class HomeScreen extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height / 1.7,
+          height: 430,
           child: Stack(
             children: [
               _heading(context),
-              const Positioned(bottom: 0, left: 0, child: ReminderTask()),
+              const Positioned(
+                  bottom: 0, right: 0, left: 0, child: ReminderTask()),
             ],
           ),
         ),

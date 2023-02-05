@@ -6,41 +6,45 @@ class AllTasks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text("All Tasks"),
-            Text("See All"),
-          ],
-        ),
-        SizedBox(
-          height: 200,
-          child: ListView(
-            shrinkWrap: true,
+    return Container(
+      color: Colors.green,
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
               Text("All Tasks"),
               Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
-              Text("See All"),
             ],
           ),
-        )
-        
-      ],
-
+          Container(
+            color: Colors.yellow,
+            height: 200,
+            child: ListView(
+              shrinkWrap: true,
+              children: const [
+                Text("All Tasks"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+                Text("See All"),
+              ],
+            ),
+          )
+          
+        ],
+    
+      ),
     );
   }
 }
