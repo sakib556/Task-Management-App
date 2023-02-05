@@ -33,15 +33,11 @@ class ReminderCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                color: Colors.yellow,
+              SizedBox(
                 height: 32,
-                width: 36,
-                child: Center(
-                  child: SvgPicture.asset(
-                    "assets/logo/$logo.svg",
-                    fit: BoxFit.none,
-                  ),
+                width: 35,
+                child: SvgPicture.asset(
+                  "assets/logo/$logo.svg"
                 ),
               ),
               const SizedBox(height: 10,),

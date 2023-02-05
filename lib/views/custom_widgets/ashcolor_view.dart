@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_app/constant/colors.dart';
 
-class RadiantGradientMask extends StatelessWidget {
-  const RadiantGradientMask({super.key, required this.child});
+class AshColorView extends StatelessWidget {
+  const AshColorView({super.key, required this.child});
   final Widget child;
 
   @override
@@ -10,10 +11,7 @@ class RadiantGradientMask extends StatelessWidget {
       shaderCallback: (bounds) => const RadialGradient(
         center: Alignment.center,
         radius: 0.5,
-        colors: [
-          Color(0xff042E2B),
-          Color(0xff2C8877),
-          ],
+        colors: [greyColor,greyColor],
         tileMode: TileMode.mirror,
       ).createShader(bounds),
       child: child,

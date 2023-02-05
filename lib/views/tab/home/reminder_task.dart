@@ -10,13 +10,19 @@ class ReminderTask extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 8, right: 8,bottom: 5),
+          padding: const EdgeInsets.only(left: 8, right: 8, bottom: 5),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              Text("Reminder Task",style: TextStyle(color: whiteColor,fontSize: 14),),
-              Text("See All",style: TextStyle(color: greyColor,fontSize: 12),),
+              Text(
+                "Reminder Task",
+                style: TextStyle(color: whiteColor, fontSize: 14),
+              ),
+              Text(
+                "See All",
+                style: TextStyle(color: greyColor, fontSize: 12),
+              ),
             ],
           ),
         ),
@@ -25,7 +31,6 @@ class ReminderTask extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           // color: Colors.brown,
           child: ListView(
-            shrinkWrap: true,
             physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 10, right: 5),
