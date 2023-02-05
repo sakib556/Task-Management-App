@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_app/constant/colors.dart';
 import 'package:task_management_app/views/custom_widgets/reminder_card.dart';
-import 'package:task_management_app/views/tab/home/home_screen.dart';
 
 class ReminderTask extends StatelessWidget {
   const ReminderTask({super.key});
@@ -21,7 +21,7 @@ class ReminderTask extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 91,
+          height: 110,
           width: MediaQuery.of(context).size.width,
           // color: Colors.brown,
           child: ListView(
@@ -29,7 +29,7 @@ class ReminderTask extends StatelessWidget {
             physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 10, right: 5),
-            children: _widgetList,
+            children: _remiderTaskList,
           ),
         ),
       ],
@@ -37,23 +37,23 @@ class ReminderTask extends StatelessWidget {
   }
 }
 
-List<Widget> _widgetList = [
+List<Widget> _remiderTaskList = [
   ReminderCard(
       onTap: () {},
       logo: "reminder_yellow",
       title: "Online Class Routine",
       date: "10/12/2022"),
-  // const SizedBox(
-  //   width: 10,
-  // ),
+  const SizedBox(
+    width: 10,
+  ),
   ReminderCard(
       onTap: () {},
       logo: "reminder_green",
       title: "Office Work List",
       date: "15/12/2022"),
-  // const SizedBox(
-  //   width: 10,
-  // ),
+  const SizedBox(
+    width: 10,
+  ),
   ReminderCard(
       onTap: () {},
       logo: "reminder_blue",

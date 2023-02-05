@@ -22,7 +22,10 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        _allTasks()
+        const SizedBox(
+          height: 10,
+        ),
+        const AllTasks()
       ],
     );
   }
@@ -58,17 +61,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _allTasks() {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: AllTasks(),
-    );
-  }
+  
 }
-
-const whiteColor = Colors.white;
-const greyColor = Color(0xffB2FFFFFF);
-const deepGreyColor = Color(0xff1AFFFFFF);
 
 class Title extends StatelessWidget {
   const Title({super.key});
@@ -121,7 +115,7 @@ class WelcomeMessage extends StatelessWidget {
     return Container(
       height: 180,
       decoration: BoxDecoration(
-          border: Border.all(width: 1, color: Color(0xff1AFFFFFF)),
+          border: Border.all(width: 1, color: const Color(0xff1AFFFFFF)),
           borderRadius: BorderRadius.circular(15),
           color: const Color(0xff1AFFFFFF)),
       child: Stack(

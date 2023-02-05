@@ -10,3 +10,6 @@ Color onBackgroundColor(BuildContext context){
 //  }
 const backgroundColor = Color(0xffF3F3F3);
 const primaryColor = Color(0xff042E2B);
+const whiteColor = Colors.white;
+const greyColor = Color(0xffB2FFFFFF);
+const deepGreyColor = Color(0xff1AFFFFFF);
