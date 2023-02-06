@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_management_app/constant/colors.dart';
-import 'package:task_management_app/views/custom_widgets/reminder_card.dart';
+import 'package:task_management_app/views/custom_widgets/all_task_card.dart';
 
 class AllTasks extends StatelessWidget {
   const AllTasks({super.key});
@@ -28,7 +28,7 @@ class AllTasks extends StatelessWidget {
                     "See All",
                     style: TextStyle(
                         color: MyColors.secondaryColor,
-                        fontSize: 12,
+                        fontSize: 1,
                         fontWeight: FontWeight.w400),
                   ),
                 ],

@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:task_management_app/constant/colors.dart';
 import 'package:task_management_app/views/custom_widgets/gradient_container.dart';
 import 'package:task_management_app/views/custom_widgets/play_button.dart';
-import 'package:task_management_app/views/tab/home/all_tasks.dart';
-import 'package:task_management_app/views/tab/home/reminder_task.dart';
+import 'package:task_management_app/views/tabs/home/all_tasks.dart';
+import 'package:task_management_app/views/tabs/home/reminder_task.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -84,7 +84,10 @@ class Title extends StatelessWidget {
               height: 7,
             ),
             Text("Let’s explore your notes",
-                style: TextStyle(fontSize: 12, color: MyColors.greyColor,fontWeight: FontWeight.w400)),
+                style: TextStyle(
+                    fontSize: 12,
+                    color: MyColors.greyColor,
+                    fontWeight: FontWeight.w400)),
           ],
         ),
         Container(
@@ -128,13 +131,19 @@ class WelcomeMessage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text("Welcome to TickTick Task",
-                    style: TextStyle(fontSize: 14, color: MyColors.whiteColor,fontWeight: FontWeight.w600)),
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: MyColors.whiteColor,
+                        fontWeight: FontWeight.w600)),
                 SizedBox(
                   height: 12,
                 ),
                 Text(
                     "Your one-stop app for task management. Simplify, track, and accomplish tasks with ease.",
-                    style: TextStyle(fontSize: 12, color: MyColors.greyColor,fontWeight: FontWeight.w400)),
+                    style: TextStyle(
+                        fontSize: 12,
+                        color: MyColors.greyColor,
+                        fontWeight: FontWeight.w400)),
                 SizedBox(
                   height: 14,
                 ),

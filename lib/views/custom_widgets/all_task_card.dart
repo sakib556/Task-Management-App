@@ -3,13 +3,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:task_management_app/constant/colors.dart';
 import 'package:task_management_app/constant/style.dart';
 
-class ReminderCard extends StatelessWidget {
+class AllTaskCard extends StatelessWidget {
   final VoidCallback onTap;
   final String logo;
   final String title;
   final String date;
 
-  const ReminderCard(
+  const AllTaskCard(
       {super.key,
       required this.onTap,
       required this.logo,
@@ -22,39 +22,44 @@ class ReminderCard extends StatelessWidget {
       onTap: () {
         onTap();
       },
-      child: Card(
-        color: MyColors.whiteColor,
-        elevation: 5,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+      child: Container(
+        decoration: BoxDecoration(
+          color: MyColors.whiteColor,
+          borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Column(
+          child: Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 32,
-                width: 35,
-                child: SvgPicture.asset("assets/logo/$logo.svg"),
+                width: 36,
+                child: SvgPicture.asset(
+                  "assets/logo/$logo.svg",
+                  fit: BoxFit.fill,
+                ),
               ),
               const SizedBox(
-                height: 10,
+                width: 10,
               ),
-              Text(
-                title,
-                style: titleStyle,
-              ),
-              const SizedBox(
-                height: 7,
-              ),
-              Row(
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Save Date:", style: subTitleStyle),
-                  Text(
-                    date,
-                    style: subTitleStyle,
+                  Text(title, style: titleStyle),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Save Date:",
+                        style: subTitleStyle,
+                      ),
+                      Text(date, style: subTitleStyle),
+                    ],
                   ),
                 ],
               ),

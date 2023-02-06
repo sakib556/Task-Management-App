@@ -4,7 +4,7 @@ class MyColors {
   MyColors._();
   static const backgroundColor = Color(0xffF3F3F3);
   static const primaryColor = Color(0xff042E2B);
-  static const secondaryColor = Color(0xB2042E2B);
+  static const secondaryColor = Color(0xB2042E2B); 
   static const subtitleColor = Color(0x80042E2B);
   static const greenColor = Color(0xff24966D);
   static const whiteColor = Color(0xffFFFFFF);

@@ -16,7 +16,10 @@ class ReminderTask extends StatelessWidget {
             children: const [
               Text(
                 "Reminder Task",
-                style: TextStyle(color: MyColors.whiteColor, fontSize: 14,fontWeight: FontWeight.w600),
+                style: TextStyle(
+                    color: MyColors.whiteColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600),
               ),
               Text(
                 "See All",

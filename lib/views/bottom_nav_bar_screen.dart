@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:task_management_app/constant/colors.dart';
 import 'package:task_management_app/constant/icons.dart';
-import 'package:task_management_app/views/custom_widgets/ashcolor_view.dart';
 import 'package:task_management_app/views/custom_widgets/gradiant_view.dart';
-import 'package:task_management_app/views/tab/home/home_screen.dart';
-import 'package:task_management_app/views/tab/record/record_screen.dart';
-import 'package:task_management_app/views/tab/saved/saved_screen.dart';
-import 'package:task_management_app/views/tab/search/search_screen.dart';
-import 'package:task_management_app/views/tab/settings/settings_screen.dart';
+import 'package:task_management_app/views/tabs/home/home_screen.dart';
+import 'package:task_management_app/views/tabs/record/record_screen.dart';
+import 'package:task_management_app/views/tabs/saved/saved_screen.dart';
+import 'package:task_management_app/views/tabs/search/search_screen.dart';
+import 'package:task_management_app/views/tabs/settings/settings_screen.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   const BottomNavBarScreen({super.key});
@@ -21,28 +20,28 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   int _selectedIndex = 0;
 
   final List<BottomNavigationBarItem> _navBarItems = [
-     BottomNavigationBarItem(
+    BottomNavigationBarItem(
       activeIcon: GradiantView(child: SvgPicture.asset(homeIcon)),
-      icon: AshColorView(child: SvgPicture.asset(homeIcon)),
+      icon: SvgPicture.asset(homeIcon),
       label: 'Home',
     ),
-     BottomNavigationBarItem(
+    BottomNavigationBarItem(
       activeIcon: GradiantView(child: SvgPicture.asset(searchIcon)),
-      icon:  SvgPicture.asset(searchIcon),
+      icon: SvgPicture.asset(searchIcon),
       label: 'Search',
     ),
-     BottomNavigationBarItem(
+    BottomNavigationBarItem(
       activeIcon: GradiantView(child: SvgPicture.asset(recordIcon)),
-      icon:  SvgPicture.asset(recordIcon),
+      icon: SvgPicture.asset(recordIcon),
       label: 'Record',
     ),
-     BottomNavigationBarItem(
+    BottomNavigationBarItem(
       activeIcon: GradiantView(child: SvgPicture.asset(savedIcon)),
-      icon:  SvgPicture.asset(savedIcon),
+      icon: SvgPicture.asset(savedIcon),
       label: 'Saved',
     ),
-     BottomNavigationBarItem(
-      activeIcon: GradiantView(child:  SvgPicture.asset(settingsIcon)),
+    BottomNavigationBarItem(
+      activeIcon: GradiantView(child: SvgPicture.asset(settingsIcon)),
       icon: SvgPicture.asset(settingsIcon),
       label: 'Settings',
     ),
@@ -83,6 +82,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             items: _navBarItems,
+            unselectedItemColor: MyColors.ashColor,
             currentIndex: _selectedIndex,
             showUnselectedLabels: true,
             onTap: _onItemTapped,
