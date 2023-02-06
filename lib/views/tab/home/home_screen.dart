@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 1.7 - 40,
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
-          color: primaryColor,
+          color: MyColors.primaryColor,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
             bottomRight: Radius.circular(20),
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 child: Column(
                   children: const [
-                    Title(),
+                    SizedBox(child: Title()),
                     SizedBox(
                       height: 30,
                     ),
@@ -60,8 +60,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  
 }
 
 class Title extends StatelessWidget {
@@ -77,21 +75,24 @@ class Title extends StatelessWidget {
           children: const [
             Text(
               "Hi, Habib 👋",
-              style: TextStyle(fontSize: 18, color: whiteColor),
+              style: TextStyle(
+                  fontSize: 18,
+                  color: MyColors.whiteColor,
+                  fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: 7,
             ),
             Text("Let’s explore your notes",
-                style: TextStyle(fontSize: 12, color: greyColor)),
+                style: TextStyle(fontSize: 12, color: MyColors.greyColor,fontWeight: FontWeight.w400)),
           ],
         ),
         Container(
           height: 40,
           width: 40,
           decoration: BoxDecoration(
-            //   color: const Color(0xff24966D),
-            border: Border.all(color: const Color(0xff24966D), width: 2),
+            color: MyColors.whiteColor,
+            border: Border.all(color: MyColors.greenColor, width: 2),
             borderRadius: BorderRadius.circular(50),
           ),
           child: ClipRRect(
@@ -99,6 +100,7 @@ class Title extends StatelessWidget {
             clipBehavior: Clip.hardEdge,
             child: const Icon(
               Icons.person,
+              color: MyColors.greenColor,
             ),
           ),
         ),
@@ -113,24 +115,29 @@ class WelcomeMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 140,
       decoration: BoxDecoration(
-          border: Border.all(width: 1, color: const Color(0xff1AFFFFFF)),
+          border: Border.all(width: 1, color: MyColors.deepGreyColor),
           borderRadius: BorderRadius.circular(15),
-          color: const Color(0xff1AFFFFFF)),
+          color: MyColors.deepGreyColor),
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
                 Text("Welcome to TickTick Task",
-                    style: TextStyle(fontSize: 18, color: whiteColor)),
+                    style: TextStyle(fontSize: 14, color: MyColors.whiteColor,fontWeight: FontWeight.w600)),
+                SizedBox(
+                  height: 12,
+                ),
                 Text(
                     "Your one-stop app for task management. Simplify, track, and accomplish tasks with ease.",
-                    style: TextStyle(fontSize: 12, color: greyColor)),
+                    style: TextStyle(fontSize: 12, color: MyColors.greyColor,fontWeight: FontWeight.w400)),
+                SizedBox(
+                  height: 14,
+                ),
                 PlayButton(text: "Watch Video")
               ],
             ),

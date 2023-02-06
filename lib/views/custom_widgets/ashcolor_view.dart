@@ -11,7 +11,7 @@ class AshColorView extends StatelessWidget {
       shaderCallback: (bounds) => const RadialGradient(
         center: Alignment.center,
         radius: 0.5,
-        colors: [greyColor,greyColor],
+        colors: [MyColors.greyColor,MyColors.greyColor],
         tileMode: TileMode.mirror,
       ).createShader(bounds),
       child: child,

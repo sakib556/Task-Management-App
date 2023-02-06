@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_app/constant/colors.dart';
 import 'package:task_management_app/views/custom_widgets/reminder_card.dart';
 
 class AllTasks extends StatelessWidget {
@@ -16,8 +17,20 @@ class AllTasks extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  Text("All Tasks"),
-                  Text("See All"),
+                  Text(
+                    "All Tasks",
+                    style: TextStyle(
+                        color: MyColors.primaryColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                        color: MyColors.secondaryColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400),
+                  ),
                 ],
               ),
             ),

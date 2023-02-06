@@ -22,27 +22,27 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
 
   final List<BottomNavigationBarItem> _navBarItems = [
      BottomNavigationBarItem(
-      activeIcon: RadiantGradientMask(child: SvgPicture.asset(homeIcon)),
+      activeIcon: GradiantView(child: SvgPicture.asset(homeIcon)),
       icon: AshColorView(child: SvgPicture.asset(homeIcon)),
       label: 'Home',
     ),
      BottomNavigationBarItem(
-      activeIcon: RadiantGradientMask(child: SvgPicture.asset(searchIcon)),
+      activeIcon: GradiantView(child: SvgPicture.asset(searchIcon)),
       icon:  SvgPicture.asset(searchIcon),
       label: 'Search',
     ),
      BottomNavigationBarItem(
-      activeIcon: RadiantGradientMask(child: SvgPicture.asset(recordIcon)),
+      activeIcon: GradiantView(child: SvgPicture.asset(recordIcon)),
       icon:  SvgPicture.asset(recordIcon),
       label: 'Record',
     ),
      BottomNavigationBarItem(
-      activeIcon: RadiantGradientMask(child: SvgPicture.asset(savedIcon)),
+      activeIcon: GradiantView(child: SvgPicture.asset(savedIcon)),
       icon:  SvgPicture.asset(savedIcon),
       label: 'Saved',
     ),
      BottomNavigationBarItem(
-      activeIcon: RadiantGradientMask(child:  SvgPicture.asset(settingsIcon)),
+      activeIcon: GradiantView(child:  SvgPicture.asset(settingsIcon)),
       icon: SvgPicture.asset(settingsIcon),
       label: 'Settings',
     ),
@@ -63,12 +63,12 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: MyColors.backgroundColor,
       extendBody: true,
       body: _screens[_selectedIndex],
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: MyColors.whiteColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(18.0), // adjust to your liking
             topRight: Radius.circular(18.0), // adjust to your liking
@@ -85,7 +85,6 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             items: _navBarItems,
             currentIndex: _selectedIndex,
             showUnselectedLabels: true,
-            selectedLabelStyle: const TextStyle(color: Color(0xff042E2B)),
             onTap: _onItemTapped,
           ),
         ),
